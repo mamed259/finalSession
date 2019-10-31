@@ -1,11 +1,12 @@
 import React from "react";
 import Todo from "../components/Todo";
+import "../App.css"
 import { connect } from "react-redux";
 import { toggleTodo } from "../actions";
 
 const TodoList = ({ todos, toggleTodo }) => {
     return (
-        <ul>
+        <ul className="todo-list">
             {todos != null &&
             todos.map(todo => (
                 <Todo

@@ -1,14 +1,29 @@
 import React from "react";
 import "../App.css"
-import AddTodo from "../container/addTodo";
-import TodoList from "../container/TodoList";
-import Footer from "../container/Footer";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import Posts from "./Posts";
+import TodoPage from "./TodoPage";
 
 const App = () => (
+
     <div className="content">
-        <AddTodo />
-        <TodoList />
-        <Footer />
+        <Router>
+            <div>
+                <ul className="router-list">
+                    <li>
+                        <Link to={'/'} className="nav-link">Todo</Link>
+                    </li>
+                    <li>
+                        <Link to={'/posts'}>Posts</Link>
+                    </li>
+                </ul>
+
+                <Switch>
+                    <Route exact path='/' component={TodoPage} />
+                    <Route path='/posts' component={Posts} />
+                </Switch>
+            </div>
+        </Router>
     </div>
 );
 

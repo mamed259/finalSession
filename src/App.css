@@ -3,3 +3,12 @@
   margin: 100px auto;
   display: table;
 }
+
+.todo-list{
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-list li{
+  margin: 5px 0;
+}
